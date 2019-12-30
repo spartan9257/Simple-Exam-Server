@@ -17,9 +17,18 @@ if path.exists("Exam Results\\" + out_file) == False:
     file = open("Exam Results\\" + out_file, "x")
     file.close()
 
+#for simplicity Im updating the output file name with its foler
+out_file = "Exam Results\\" + out_file
+
+
+
+
 #To connect to the server localhost:8080
 #Or ip_address:8080
 PORT = 8080
+
+
+
 
 #Class that handles HTTP GET and POST requests
 class ServerHandler(http.server.SimpleHTTPRequestHandler):
@@ -43,19 +52,21 @@ class ServerHandler(http.server.SimpleHTTPRequestHandler):
             logging.error(item)
         http.server.SimpleHTTPRequestHandler.do_GET(self)
         
-        #Looks for HTML POST values and saves them to the file
+        #Looks for HTML POST values and saves them to the CSV file,
         #the "string" must match an elements name in the html file
-        with open(out_file, "a+") as file:
-            file.write(str(form.getvalue(str("firstname"))) + ",")
-            file.write(str(form.getvalue(str("lastname"))) + ",")
-            file.write(str(form.getvalue(str("email"))) + ",")
-            file.write(str(form.getvalue(str("q1"))) + ",")
-            file.write(str(form.getvalue(str("q2"))) + ",")
-            file.write(str(form.getvalue(str("q3"))) + ",")
-            file.write(str(form.getvalue(str("q4"))) + ",")
-            file.write(str(form.getvalue(str("q5"))) + ",")
-            file.write("\n")     
-        file.close()
+        fields = []
+        fields.append(str(form.getvalue(str("firstname"))))
+        fields.append(str(form.getvalue(str("lastname"))))
+        fields.append(str(form.getvalue(str("email"))))
+        fields.append(str(form.getvalue(str("q1"))))
+        fields.append(str(form.getvalue(str("q2"))))
+        fields.append(str(form.getvalue(str("q3"))))
+        fields.append(str(form.getvalue(str("q4"))))
+        fields.append(str(form.getvalue(str("q5"))))
+        #Save all the fields to the output file
+        with open(out_file, "a+", newline="") as csvfile:
+            csvwriter = csv.writer(csvfile)
+            csvwriter.writerow(fields)
 
 #initializes the server
 Handler = ServerHandler
