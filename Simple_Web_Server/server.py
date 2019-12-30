@@ -1,22 +1,20 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from os import path
-import http.server
-import socketserver
-import logging
-import cgi
+import cgi, csv, logging, socketserver, http.server
 
 #Create a user defined file for data output
 #Validate the user input
 valid_response = False
 while(not valid_response):
-    out_file = input("Enter user-data filename (include .txt): ")
-    if out_file.find(".txt") > -1:
-        break
+    out_file = input("Enter user data filename: ")
+    if out_file.find(".") > -1:
+        print("Invalid input! Must exclude file extention from name.")
     else:
-        print("Invalid input! Must include .txt (fileName.txt)")
+        break
+out_file = out_file + ".csv"
 #If the file doesn't already exist, create it.
-if path.exists(out_file) == False:
-    file = open(out_file, "x")
+if path.exists("Exam Results\\" + out_file) == False:
+    file = open("Exam Results\\" + out_file, "x")
     file.close()
 
 #To connect to the server localhost:8080
