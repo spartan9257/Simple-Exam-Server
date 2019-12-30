@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Simple_Web_Server", "Simple_Web_Server\Simple_Web_Server.pyproj", "{EDC6DEC2-D086-4E22-A0D8-DD71BFE6FE1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDC6DEC2-D086-4E22-A0D8-DD71BFE6FE1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC6DEC2-D086-4E22-A0D8-DD71BFE6FE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9C3E645-8710-4BB9-B8BB-581AD451CF09}
+	EndGlobalSection
+EndGlobal

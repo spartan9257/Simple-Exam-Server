@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ESC20</title>
+    <style>
+        .big {
+            width: 120%;
+            height: 120%;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 40%;
+            height: 5em;
+            width: 10em;
+            border: 3px solid red;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // Checks each form element before submission. Prevents empty values
+        function required() {
+            var empt = document.forms["test"]["q1"].value;
+            if (empt == "") {
+                alert("Please answer all the exam questions");
+                return false;
+            }
+            else {
+                alert('Successfully Submitted!');
+                return true
+                close();
+            }
+        }
+</script>
+    <h1>Security Awarness Training</h1>
+    <p>Please fillout your information bellow, then complete the 10 question exam.</p>
+    <form name="test" action="certificate.html" onsubmit="return required()" method="post">
+        <h1>First Name: <input type="text" name="firstname" required /><br /></h1>
+        <h1>Last Name: <input type="text" name="lastname" required/><br /></h1>
+        <h1>Email: <input type="email" name="email" required/><br /><b /></h1>
+
+        <p>1. Question about something important</p>
+        <input type="radio" name="q1" value="a" />A. answer<br />
+        <input type="radio" name="q1" value="b" />B. answer<br />
+        <input type="radio" name="q1" value="c" />C. answer<br />
+        <input type="radio" name="q1" value="d" />D. answer<br />
+        <input type="radio" name="q1" value="e" />E. answer<br />
+
+        <p>2. Question about something important</p>
+        <input type="radio" name="q2" value="a" />A. answer<br />
+        <input type="radio" name="q2" value="b" />B. answer<br />
+        <input type="radio" name="q2" value="c" />C. answer<br />
+        <input type="radio" name="q2" value="d" />D. answer<br />
+        <input type="radio" name="q2" value="e" />E. answer<br />
+
+        <p>3. Question about something important</p>
+        <input type="radio" name="q3" value="a" />A. answer<br />
+        <input type="radio" name="q3" value="b" />B. answer<br />
+        <input type="radio" name="q3" value="c" />C. answer<br />
+        <input type="radio" name="q3" value="d" />D. answer<br />
+        <input type="radio" name="q3" value="e" />E. answer<br />
+
+        <p>4. Question about something important</p>
+        <input type="radio" name="q4" value="a" />A. answer<br />
+        <input type="radio" name="q4" value="b" />B. answer<br />
+        <input type="radio" name="q4" value="c" />C. answer<br />
+        <input type="radio" name="q4" value="d" />D. answer<br />
+        <input type="radio" name="q4" value="e" />E. answer<br />
+
+        <p>5. Question about something important</p>
+        <input type="radio" name="q5" value="a" />A. answer<br />
+        <input type="radio" name="q5" value="b" />B. answer<br />
+        <input type="radio" name="q5" value="c" />C. answer<br />
+        <input type="radio" name="q5" value="d" />D. answer<br />
+        <input type="radio" name="q5" value="e" />E. answer<br />
+
+        <h1><input name="submit" type="submit" class="center"/></h1>
+    </form>
+</body>
+</html>
